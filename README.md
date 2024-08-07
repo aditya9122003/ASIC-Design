@@ -1,4 +1,6 @@
-LAB 1:
+<h1>
+  LAB 1:
+</h1>
 
 In this lab, we have to write a C program that calculates the sum of numbers from 1 to a certain number ("n" in my code) and prints the sum. 
 Eventually, we must compare the outputs compiled by the GCC compiler and the RISC-V compiler. 
@@ -91,7 +93,9 @@ O1 - Hex(101c0 - 10184) / 4 = 15
 
 As, 12<15, we can say that less number of instructions were carried on in the Ofast, as compared to O1 flag. 
 
-LAB 2:
+<h1>
+  LAB 2:
+</h1>
 
 In this lab we have to use the debug tool in the Spike simulator. It makes debugging a lot easier, as we can actually go through every instruction, and check the values.
 
