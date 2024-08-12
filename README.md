@@ -331,6 +331,86 @@ The stack pointer is being decremented by the value 16, (or being incremented by
 
 <details><summary>LAB 4:</summary>
 
+In this lab, we have to use the RISC-V code netlist and testbench for functional simulation experiments. We also have to create waveforms using gtkwave and attach snapshots.
 
-  
+<br>
+
+The instructions implemented are:
+
+![1_instr](https://github.com/user-attachments/assets/ac58c154-5f86-4897-96e6-ffeded25f727)
+
+Below, are the given Standard ISA and the Hardcode ISA:
+
+|Instruction	   |Standard RISC-V ISA |Hardcoded ISA|
+|----------------|--------------------|-------------|
+|ADD R6, R2, R1  |	32'h00110333 	    |32'h02208300 |
+|SUB R7, R1, R2  |	32'h402083b3 	    |32'h02209380 |
+|AND R8, R1, R3  |	32'h0030f433 	    |32'h0230a400 |
+|OR R9, R2, R5 	 |  32'h005164b3 	    |32'h02513480 |
+|XOR R10, R1, R4 |	32'h0040c533 	    |32'h0240c500 |
+|SLT R1, R2, R4  |	32'h0045a0b3 	    |32'h02415580 |
+|ADDI R12, R4, 5 | 	32'h004120b3 	    |32'h00520600 |
+|BEQ R0, R0, 15  |	32'h00000f63 	    |32'h00f00002 |
+|SW R3, R1, 2 	 |  32'h0030a123 	    |32'h00209181 |
+|LW R13, R1, 2 	 |  32'h0020a683 	    |32'h00208681 |
+|SRL R16, R14, R2| 	32'h0030a123 	    |32'h00271803 |
+|SLL R15, R1, R2 |	32'h002097b3 	    |32'h00208783 |
+
+We get the following result, after using the commands mentioned:
+
+<br>
+
+![Out_earlier](https://github.com/user-attachments/assets/1d203789-8830-481f-a2d8-d76bb3de10b6)
+
+The Hardcoded instructions gave the following waveforms:
+
+ADD r6, r2, r1
+
+![1_1](https://github.com/user-attachments/assets/449f9a42-b696-4c71-a646-2d1414af6922)
+
+
+SUB r7, r1, r2
+
+![1_2](https://github.com/user-attachments/assets/db7d638a-feeb-48ca-aeba-001fe0a5f643)
+
+AND r8, r1, r3
+
+![1_3](https://github.com/user-attachments/assets/eb5f26c2-43fb-4944-b77b-395ceff23fb8)
+
+OR r9, r2, r5 
+
+![1_4](https://github.com/user-attachments/assets/7521e7ce-b578-4828-bbf1-a6a616de11ac)
+
+XOR r10, r1, r4
+
+![1_5](https://github.com/user-attachments/assets/cf481e07-c839-4e6f-af84-b04c8f4d80b0)
+
+SLT r11, r2, r4 
+
+![1_6](https://github.com/user-attachments/assets/986565b8-96ff-4780-af55-eb633db8e285)
+
+ADDI r12, r4, 5 
+
+![1_7](https://github.com/user-attachments/assets/2494d60e-6991-4c85-82aa-d78aa360247f)
+
+SW r3, r1, 2
+
+![1_8](https://github.com/user-attachments/assets/e8f73cae-0a7b-493b-9235-0d4865f75a13)
+
+LW r13, r1, 2
+
+![1_9](https://github.com/user-attachments/assets/bf2226e9-08b1-4633-8090-01f13beb1be3)
+
+BEQ r0, r0, 15 
+
+![1_10](https://github.com/user-attachments/assets/33d6977b-e176-4afd-809e-5c219fd0bc04)
+
+ADD r14, r2, r2 
+
+![1_11](https://github.com/user-attachments/assets/d961d468-c0b9-48cb-881c-0e8b2331d36c)
+
+Final Output:
+
+![1_final](https://github.com/user-attachments/assets/8bfca5e7-641d-4bbc-ac95-237632a87370)
+
 </details>
