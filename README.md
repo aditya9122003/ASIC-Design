@@ -129,19 +129,19 @@ The stack pointer is being decremented by the value 16, (or being incremented by
   In this lab, we have to first identify various RISC-V instruction type (R, I, S, B, U, J) and exact 32-bit instruction code in the instruction type format for the given RISC-V instructions.
 
   ```
-  ADD r6, r7, r8
-  SUB r8, r6, r7
-  AND r7, r6, r8
-  OR r8, r7, r5
-  XOR r8, r6, r4
-  SLT r10, r2, r4
-  ADDI r12, r3, 5
-  SW r3, r1, 4
-  SRL r16, r11, r2
-  BNE r0, r1, 20
-  BEQ r0, r0, 15
-  LW r13, r11, 2
-  SLL r15, r11, r2
+ ADD r10, r11, r12
+ SUB r12, r10, r11
+ AND r11, r10, r12
+ OR r8, r11, r5
+ XOR r8, r10, r4
+ SLT r00, r1, r4
+ ADDI r02, r2, 5
+ SW r2, r0, 4
+ SRL r06, r01, r1
+ BNE r0, r0, 20
+ BEQ r0, r0, 15
+ LW r03, r01, 2
+ SLL r05, r01, r1
   ```
   Here are the basic formats for the given instruction types (R, I, S, B, U, J):
   
@@ -182,151 +182,176 @@ The stack pointer is being decremented by the value 16, (or being incremented by
 
 ![instr2](https://github.com/user-attachments/assets/4abeb1c5-48ba-435d-8419-d31b49aa6035)
 
-1. ADD r6, r7, r8
+1. ADD r10, r11, r12
+   
+    * Instruction Type: R-Type
+    * 32-bit Pattern:
+      *  Hex: 32'h00B5A033
+      *  Binary: 0000000 01100 01011 000 01010 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 01010 (r10) (5 bits)
+    * funct3: 000 (3 bits)
+    * rs1: 01011 (r11) (5 bits)
+    * rs2: 01100 (r12) (5 bits)
+    * funct7: 0000000 (7 bits)
+
+3. SUB r12, r10, r11
 
     * Instruction Type: R-Type
-    * 32-bit Pattern: 0000000 01000 00111 000 00110 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 00110 (5 bits) - Register r6.
-    * funct3: 000 (3 bits) - Specifies the ADD operation.
-    * rs1: 00111 (5 bits) - Register r7.
-    * rs2: 01000 (5 bits) - Register r8.
-    * funct7: 0000000 (7 bits) - Specifies the ADD operation.
+    * 32-bit Pattern:
+      *  Hex: 32'h40B5C033
+      * Binary: 0100000 01011 01010 000 01100 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 01100 (r12) (5 bits)
+    * funct3: 000 (3 bits)
+    * rs1: 01010 (r10) (5 bits)
+    * rs2: 01011 (r11) (5 bits)
+    * funct7: 0100000 (7 bits)
 
-2. SUB r8, r6, r7
-
-    * Instruction Type: R-Type
-    * 32-bit Pattern: 0100000 00111 00110 000 01000 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 01000 (5 bits) - Register r8.
-    * funct3: 000 (3 bits) - Specifies the SUB operation.
-    * rs1: 00110 (5 bits) - Register r6.
-    * rs2: 00111 (5 bits) - Register r7.
-    * funct7: 0100000 (7 bits) - Specifies the SUB operation.
-
-3. AND r7, r6, r8
+4. AND r11, r10, r12
 
     * Instruction Type: R-Type
-    * 32-bit Pattern: 0000000 01000 00110 111 00111 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 00111 (5 bits) - Register r7.
-    * funct3: 111 (3 bits) - Specifies the AND operation.
-    * rs1: 00110 (5 bits) - Register r6.
-    * rs2: 01000 (5 bits) - Register r8.
-    * funct7: 0000000 (7 bits) - Specifies the AND operation.
+    * 32-bit Pattern:
+      *  Hex: 32'h00C5B033
+      *  Binary: 0000000 01100 01010 111 01011 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 01011 (r11) (5 bits)
+    * funct3: 111 (3 bits)
+    * rs1: 01010 (r10) (5 bits)
+    * rs2: 01100 (r12) (5 bits)
+    * funct7: 0000000 (7 bits)
 
-4. OR r8, r7, r5
-
-    * Instruction Type: R-Type
-    * 32-bit Pattern: 0000000 00101 00111 110 01000 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 01000 (5 bits) - Register r8.
-    * funct3: 110 (3 bits) - Specifies the OR operation.
-    * rs1: 00111 (5 bits) - Register r7.
-    * rs2: 00101 (5 bits) - Register r5.
-    * funct7: 0000000 (7 bits) - Specifies the OR operation.
-
-5. XOR r8, r6, r4
+5. OR r8, r11, r5
 
     * Instruction Type: R-Type
-    * 32-bit Pattern: 0000000 00100 00110 100 01000 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 01000 (5 bits) - Register r8.
-    * funct3: 100 (3 bits) - Specifies the XOR operation.
-    * rs1: 00110 (5 bits) - Register r6.
-    * rs2: 00100 (5 bits) - Register r4.
-    * funct7: 0000000 (7 bits) - Specifies the XOR operation.
+    * 32-bit Pattern:
+      *  Hex: 32'h0055A833
+      *  Binary: 0000000 00101 01011 110 01000 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 01000 (r8) (5 bits)
+    * funct3: 110 (3 bits)
+    * rs1: 01011 (r11) (5 bits)
+    * rs2: 00101 (r5) (5 bits)
+    * funct7: 0000000 (7 bits)
 
-6. SLT r10, r2, r4
+6. XOR r8, r10, r4
 
     * Instruction Type: R-Type
-    * 32-bit Pattern: 0000000 00100 00010 010 01010 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 01010 (5 bits) - Register r10.
-    * funct3: 010 (3 bits) - Specifies the SLT operation.
-    * rs1: 00010 (5 bits) - Register r2.
-    * rs2: 00100 (5 bits) - Register r4.
-    * funct7: 0000000 (7 bits) - Specifies the SLT operation.
+    * 32-bit Pattern:
+      *  Hex: 32'h0045A833
+      *  Binary: 0000000 00100 01010 100 01000 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 01000 (r8) (5 bits)
+    * funct3: 100 (3 bits)
+    * rs1: 01010 (r10) (5 bits)
+    * rs2: 00100 (r4) (5 bits)
+    * funct7: 0000000 (7 bits)
 
-7. ADDI r12, r3, 5
+7. SLT r00, r1, r4
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern:
+      *  Hex: 32'h00408033
+      *  Binary: 0000000 00100 00001 010 00000 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 00000 (r0) (5 bits)
+    * funct3: 010 (3 bits)
+    * rs1: 00001 (r1) (5 bits)
+    * rs2: 00100 (r4) (5 bits)
+    * funct7: 0000000 (7 bits)
+
+8. ADDI r02, r2, 5
 
     * Instruction Type: I-Type
-    * 32-bit Pattern: 000000000101 00011 000 01100 0010011
-    * opcode: 0010011 (7 bits) - Specifies this as an I-type instruction.
-    * rd: 01100 (5 bits) - Register r12.
-    * funct3: 000 (3 bits) - Specifies the ADDI operation.
-    * rs1: 00011 (5 bits) - Register r3.
-    * imm: 000000000101 (12 bits) - Immediate value 5.
+    * 32-bit Pattern:
+      *  Hex: 32'h00510013
+      *  Binary: 000000000101 00010 000 00010 0010011
+    * opcode: 0010011 (7 bits)
+    * rd: 00010 (r2) (5 bits)
+    * funct3: 000 (3 bits)
+    * rs1: 00010 (r2) (5 bits)
+    * imm: 000000000101 (12 bits) - Immediate value 5
 
-8. SW r3, r1, 4
+9. SW r2, r0, 4
 
     * Instruction Type: S-Type
-    * 32-bit Pattern: 000000 00011 00001 010 00100 0100011
-    * opcode: 0100011 (7 bits) - Specifies this as an S-type instruction.
-    * imm[11:5]: 0000000 (7 bits) - Part of the immediate value.
-    * rs2: 00011 (5 bits) - Register r3.
-    * rs1: 00001 (5 bits) - Register r1.
-    * funct3: 010 (3 bits) - Specifies the SW operation.
-    * imm[4:0]: 00100 (5 bits) - Part of the immediate value (4).
+    * 32-bit Pattern:
+      *  Hex: 32'h00402023
+      *  Binary: 0000000 00010 00000 010 00100 0100011
+    * opcode: 0100011 (7 bits)
+    * imm[11:5]: 0000000 (7 bits) - Part of the immediate value
+    * rs2: 00010 (r2) (5 bits)
+    * rs1: 00000 (r0) (5 bits)
+    * funct3: 010 (3 bits)
+    * imm[4:0]: 00100 (5 bits) - Part of the immediate value 4
 
-9. SRL r16, r11, r2
+10. SRL r06, r01, r1
 
     * Instruction Type: R-Type
-    * 32-bit Pattern: 0000000 00010 01011 101 10000 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 10000 (5 bits) - Register r16.
-    * funct3: 101 (3 bits) - Specifies the SRL operation.
-    * rs1: 01011 (5 bits) - Register r11.
-    * rs2: 00010 (5 bits) - Register r2.
-    * funct7: 0000000 (7 bits) - Specifies the SRL operation.
+    * 32-bit Pattern:
+      *  Hex: 32'h00129033
+      *  Binary: 0000000 00001 00001 101 00110 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 00110 (r6) (5 bits)
+    * funct3: 101 (3 bits)
+    * rs1: 00001 (r1) (5 bits)
+    * rs2: 00001 (r1) (5 bits)
+    * funct7: 0000000 (7 bits)
 
-10. BNE r0, r1, 20
-
-    * Instruction Type: B-Type
-    * 32-bit Pattern: 000000 00001 00000 001 00101 1100011
-    * opcode: 1100011 (7 bits) - Specifies this as a B-type instruction.
-    * imm[12]: 0 (1 bit) - Part of the immediate value.
-    * imm[10:5]: 000000 (6 bits) - Part of the immediate value.
-    * rs2: 00001 (5 bits) - Register r1.
-    * rs1: 00000 (5 bits) - Register r0.
-    * funct3: 001 (3 bits) - Specifies the BNE operation.
-    * imm[4:1]: 0101 (4 bits) - Part of the immediate value.
-    * imm[11]: 0 (1 bit) - Part of the immediate value (20 is encoded as offset 001010).
-
-11. BEQ r0, r0, 15
+11. BNE r0, r0, 20
 
     * Instruction Type: B-Type
-    * 32-bit Pattern: 0000000 00000 00000 000 01111 1100011
-    * opcode: 1100011 (7 bits) - Specifies this as a B-type instruction.
-    * imm[12]: 0 (1 bit) - Part of the immediate value.
-    * imm[10:5]: 0000000 (7 bits) - Part of the immediate value.
-    * rs2: 00000 (5 bits) - Register r0.
-    * rs1: 00000 (5 bits) - Register r0.
-    * funct3: 000 (3 bits) - Specifies the BEQ operation.
-    * imm[4:1]: 1111 (4 bits) - Part of the immediate value.
-    * imm[11]: 0 (1 bit) - Part of the immediate value (15 is encoded as offset 0001111).
+    * 32-bit Pattern:
+      *  Hex: 32'h01400063
+      *  Binary: 0 000001 00000 00000 001 0100 0 1100011
+    * opcode: 1100011 (7 bits)
+    * imm[12]: 0 (1 bit) - Part of the immediate value
+    * imm[10:5]: 000001 (6 bits) - Part of the immediate value
+    * rs2: 00000 (r0) (5 bits)
+    * rs1: 00000 (r0) (5 bits)
+    * funct3: 001 (3 bits)
+    * imm[4:1]: 0100 (4 bits) - Part of the immediate value
+    * imm[11]: 0 (1 bit) - Part of the immediate value 20
 
-12. LW r13, r11, 2
+12. BEQ r0, r0, 15
+
+    * Instruction Type: B-Type
+    * 32-bit Pattern:
+      *  Hex: 32'h00F00063
+      *  Binary: 0 000000 00000 00000 000 1111 0 1100011
+    * opcode: 1100011 (7 bits)
+    * imm[12]: 0 (1 bit) - Part of the immediate value
+    * imm[10:5]: 000000 (6 bits) - Part of the immediate value
+    * rs2: 00000 (r0) (5 bits)
+    * rs1: 00000 (r0) (5 bits)
+    * funct3: 000 (3 bits)
+    * imm[4:1]: 1111 (4 bits) - Part of the immediate value
+    * imm[11]: 0 (1 bit) - Part of the immediate value 15
+
+13. LW r03, r01, 2
 
     * Instruction Type: I-Type
-    * 32-bit Pattern: 000000000010 01011 010 01101 0000011
-    * opcode: 0000011 (7 bits) - Specifies this as an I-type instruction.
-    * rd: 01101 (5 bits) - Register r13.
-    * funct3: 010 (3 bits) - Specifies the LW operation.
-    * rs1: 01011 (5 bits) - Register r11.
-    * imm: 000000000010 (12 bits) - Immediate value 2.
+    * 32-bit Pattern:
+      *  Hex: 32'h00212083
+      *  Binary: 000000000010 00001 010 00011 0000011
+    * opcode: 0000011 (7 bits)
+    * rd: 00011 (r3) (5 bits)
+    * funct3: 010 (3 bits)
+    * rs1: 00001 (r1) (5 bits)
+    * imm: 000000000010 (12 bits) - Immediate value 2
 
-13. SLL r15, r11, r2
+14. SLL r05, r01, r1
 
     * Instruction Type: R-Type
-    * 32-bit Pattern: 0000000 00010 01011 001 01111 0110011
-    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
-    * rd: 01111 (5 bits) - Register r15.
-    * funct3: 001 (3 bits) - Specifies the SLL operation.
-    * rs1: 01011 (5 bits) - Register r11.
-    * rs2: 00010 (5 bits) - Register r2.
-    * funct7: 0000000 (7 bits) - Specifies the SLL operation.
-
+    * 32-bit Pattern:
+      *  Hex: 32'h00109033
+      *  Binary: 0000000 00001 00001 001 00101 0110011
+    * opcode: 0110011 (7 bits)
+    * rd: 00101 (r5) (5 bits)
+    * funct3: 001 (3 bits)
+    * rs1: 00001 (r1) (5 bits)
+    * rs2: 00001 (r1) (5 bits)
+    * funct7: 0000000 (7 bits)
 </details>
 
 <details><summary>LAB 4:</summary>
