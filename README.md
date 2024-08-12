@@ -125,22 +125,212 @@ The stack pointer is being decremented by the value 16, (or being incremented by
 
 <details>
   <summary>LAB 3:</summary>
-In this lab, we have to first identify various RISC-V instructions(R, I, S, B, U, J), and the exact 32-bit instruction code in the instruction type format for the given RISC-V instructions.
+
+  In this lab, we have to first identify various RISC-V instruction type (R, I, S, B, U, J) and exact 32-bit instruction code in the instruction type format for the given RISC-V instructions.
+
+  ```
+  ADD r6, r7, r8
+  SUB r8, r6, r7
+  AND r7, r6, r8
+  OR r8, r7, r5
+  XOR r8, r6, r4
+  SLT r10, r2, r4
+  ADDI r12, r3, 5
+  SW r3, r1, 4
+  SRL r16, r11, r2
+  BNE r0, r1, 20
+  BEQ r0, r0, 15
+  LW r13, r11, 2
+  SLL r15, r11, r2
+  ```
+  Here are the basic formats for the given instruction types (R, I, S, B, U, J):
+  
+  1. R-Type (Register)
+   * Purpose: Used for arithmetic and logical operations where both operands are registers.
+   * Examples: ADD, SUB, AND, OR, XOR, SLT
+
 <br>
-``` 
-ADD r6, r7, r8
-SUB r8, r6, r7
-AND r7, r6, r8
-OR r8, r7, r5
-XOR r8, r6, r4
-SLT r10, r2, r4
-ADDI r12, r3, 5
-SW r3, r1, 4
-SRL r16, r11, r2
-BNE r0, r1, 20
-BEQ r0, r0, 15
-LW r13, r11, 2
-SLL r15, r11, r2
-```
+
+  2. I-Type (Immediate)
+   * Purpose: Used for arithmetic operations with an immediate value, load instructions, and other operations.
+   * Examples: ADDI, LW, SRLI
+
 <br>
+
+  3. S-Type (Store)
+   * Purpose: Used for storing instructions, which write data from a register to memory.
+   * Examples: SW
+
+<br>
+
+  4. B-Type (Branch)
+   * Purpose: Used for conditional branch instructions.
+   * Examples: BEQ, BNE
+     
+<br>
+
+  5. U-Type (Upper Immediate)
+   * Purpose: Used for instructions that operate with a 20-bit immediate value, usually for loading a high-order address part.
+   * Examples: LUI (Load Upper Immediate), AUIPC (Add Upper Immediate to PC)
+
+<br>
+
+  6. J-Type (Jump)
+   * Purpose: Used for jump instructions that transfer control to a target address.
+   * Examples: JAL (Jump and Link)
+<br>
+
+![instr2](https://github.com/user-attachments/assets/4abeb1c5-48ba-435d-8419-d31b49aa6035)
+
+1. ADD r6, r7, r8
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0000000 01000 00111 000 00110 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 00110 (5 bits) - Register r6.
+    * funct3: 000 (3 bits) - Specifies the ADD operation.
+    * rs1: 00111 (5 bits) - Register r7.
+    * rs2: 01000 (5 bits) - Register r8.
+    * funct7: 0000000 (7 bits) - Specifies the ADD operation.
+
+2. SUB r8, r6, r7
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0100000 00111 00110 000 01000 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 01000 (5 bits) - Register r8.
+    * funct3: 000 (3 bits) - Specifies the SUB operation.
+    * rs1: 00110 (5 bits) - Register r6.
+    * rs2: 00111 (5 bits) - Register r7.
+    * funct7: 0100000 (7 bits) - Specifies the SUB operation.
+
+3. AND r7, r6, r8
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0000000 01000 00110 111 00111 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 00111 (5 bits) - Register r7.
+    * funct3: 111 (3 bits) - Specifies the AND operation.
+    * rs1: 00110 (5 bits) - Register r6.
+    * rs2: 01000 (5 bits) - Register r8.
+    * funct7: 0000000 (7 bits) - Specifies the AND operation.
+
+4. OR r8, r7, r5
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0000000 00101 00111 110 01000 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 01000 (5 bits) - Register r8.
+    * funct3: 110 (3 bits) - Specifies the OR operation.
+    * rs1: 00111 (5 bits) - Register r7.
+    * rs2: 00101 (5 bits) - Register r5.
+    * funct7: 0000000 (7 bits) - Specifies the OR operation.
+
+5. XOR r8, r6, r4
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0000000 00100 00110 100 01000 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 01000 (5 bits) - Register r8.
+    * funct3: 100 (3 bits) - Specifies the XOR operation.
+    * rs1: 00110 (5 bits) - Register r6.
+    * rs2: 00100 (5 bits) - Register r4.
+    * funct7: 0000000 (7 bits) - Specifies the XOR operation.
+
+6. SLT r10, r2, r4
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0000000 00100 00010 010 01010 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 01010 (5 bits) - Register r10.
+    * funct3: 010 (3 bits) - Specifies the SLT operation.
+    * rs1: 00010 (5 bits) - Register r2.
+    * rs2: 00100 (5 bits) - Register r4.
+    * funct7: 0000000 (7 bits) - Specifies the SLT operation.
+
+7. ADDI r12, r3, 5
+
+    * Instruction Type: I-Type
+    * 32-bit Pattern: 000000000101 00011 000 01100 0010011
+    * opcode: 0010011 (7 bits) - Specifies this as an I-type instruction.
+    * rd: 01100 (5 bits) - Register r12.
+    * funct3: 000 (3 bits) - Specifies the ADDI operation.
+    * rs1: 00011 (5 bits) - Register r3.
+    * imm: 000000000101 (12 bits) - Immediate value 5.
+
+8. SW r3, r1, 4
+
+    * Instruction Type: S-Type
+    * 32-bit Pattern: 000000 00011 00001 010 00100 0100011
+    * opcode: 0100011 (7 bits) - Specifies this as an S-type instruction.
+    * imm[11:5]: 0000000 (7 bits) - Part of the immediate value.
+    * rs2: 00011 (5 bits) - Register r3.
+    * rs1: 00001 (5 bits) - Register r1.
+    * funct3: 010 (3 bits) - Specifies the SW operation.
+    * imm[4:0]: 00100 (5 bits) - Part of the immediate value (4).
+
+9. SRL r16, r11, r2
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0000000 00010 01011 101 10000 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 10000 (5 bits) - Register r16.
+    * funct3: 101 (3 bits) - Specifies the SRL operation.
+    * rs1: 01011 (5 bits) - Register r11.
+    * rs2: 00010 (5 bits) - Register r2.
+    * funct7: 0000000 (7 bits) - Specifies the SRL operation.
+
+10. BNE r0, r1, 20
+
+    * Instruction Type: B-Type
+    * 32-bit Pattern: 000000 00001 00000 001 00101 1100011
+    * opcode: 1100011 (7 bits) - Specifies this as a B-type instruction.
+    * imm[12]: 0 (1 bit) - Part of the immediate value.
+    * imm[10:5]: 000000 (6 bits) - Part of the immediate value.
+    * rs2: 00001 (5 bits) - Register r1.
+    * rs1: 00000 (5 bits) - Register r0.
+    * funct3: 001 (3 bits) - Specifies the BNE operation.
+    * imm[4:1]: 0101 (4 bits) - Part of the immediate value.
+    * imm[11]: 0 (1 bit) - Part of the immediate value (20 is encoded as offset 001010).
+
+11. BEQ r0, r0, 15
+
+    * Instruction Type: B-Type
+    * 32-bit Pattern: 0000000 00000 00000 000 01111 1100011
+    * opcode: 1100011 (7 bits) - Specifies this as a B-type instruction.
+    * imm[12]: 0 (1 bit) - Part of the immediate value.
+    * imm[10:5]: 0000000 (7 bits) - Part of the immediate value.
+    * rs2: 00000 (5 bits) - Register r0.
+    * rs1: 00000 (5 bits) - Register r0.
+    * funct3: 000 (3 bits) - Specifies the BEQ operation.
+    * imm[4:1]: 1111 (4 bits) - Part of the immediate value.
+    * imm[11]: 0 (1 bit) - Part of the immediate value (15 is encoded as offset 0001111).
+
+12. LW r13, r11, 2
+
+    * Instruction Type: I-Type
+    * 32-bit Pattern: 000000000010 01011 010 01101 0000011
+    * opcode: 0000011 (7 bits) - Specifies this as an I-type instruction.
+    * rd: 01101 (5 bits) - Register r13.
+    * funct3: 010 (3 bits) - Specifies the LW operation.
+    * rs1: 01011 (5 bits) - Register r11.
+    * imm: 000000000010 (12 bits) - Immediate value 2.
+
+13. SLL r15, r11, r2
+
+    * Instruction Type: R-Type
+    * 32-bit Pattern: 0000000 00010 01011 001 01111 0110011
+    * opcode: 0110011 (7 bits) - Specifies this as an R-type instruction.
+    * rd: 01111 (5 bits) - Register r15.
+    * funct3: 001 (3 bits) - Specifies the SLL operation.
+    * rs1: 01011 (5 bits) - Register r11.
+    * rs2: 00010 (5 bits) - Register r2.
+    * funct7: 0000000 (7 bits) - Specifies the SLL operation.
+
+</details>
+
+<details><summary>LAB 4:</summary>
+
+
+  
 </details>
