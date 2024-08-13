@@ -438,4 +438,6 @@ Final Output:
 
 ![1_final](https://github.com/user-attachments/assets/8bfca5e7-641d-4bbc-ac95-237632a87370)
 
+Observation: We observe a variation between bit pattern of RISCV code and hardcoded ISA.
+
 </details>
