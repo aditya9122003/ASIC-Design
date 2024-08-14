@@ -441,3 +441,88 @@ Final Output:
 Observation: We observe a variation between bit pattern of RISCV code and hardcoded ISA.
 
 </details>
+
+<details><summary>LAB 5:</summary>
+  In this lab, we had to write a C code and compile it with the GCC compiler and RISCV-GCC compiler. After compiling, we have to check whether both the shown outputs are identical.
+
+  <br>
+
+  For this purpose, I chose to write a code to calculate divisors of a number and give prime factorization, as this is one of the codes that I have encountered a lot while doing competitive programming.
+
+  <br>
+
+  Rather than having a linear time complexity, we will be using a square-root time complexity (for optimization purposes).
+
+  Code:
+
+  ```c
+  #include<stdio.h>
+  #include<math.h>
+  int main()
+  {
+    //this is an optimised way to calculate the divisors of a number
+    //rather than linear time, we are square root time complexity algorithm
+    int num;
+    printf("Please enter the number of your choice except 0: ");
+    scanf("%d", &num);
+    printf("Divisors of %d are: ",num);
+    int c=0;
+    for(int i=1;i*i<=num;i++)
+    {
+      if(num%i==0)
+      {
+        printf("%d ",i);
+      }
+      c=i;
+    }
+    for(int i=c;i>0;i--)
+    {
+      if(num%i==0 && i!=(num/i))
+      {
+        printf("%d ",num/i);
+      }
+    }
+    printf("\n");
+    printf("The prime factorization of %d is: ", num);
+    if(num==1)
+    {
+      printf("N/A\n");
+    }
+    else
+    {
+      while(num%2==0)
+      {
+        printf("%d ",2);
+        num/=2;
+      }
+      for(int i=3;i*i<=num;i+=2)
+      {
+        while(num%i==0)
+        {
+          printf("%d ",i);
+          num/=i;
+        }
+      }
+      if(num>1)
+      {
+        printf("%d ",num);
+      }
+      printf("\n");
+    }
+    return 0;
+  }
+```
+
+Output obtained by using GCC compiler:
+
+![gcc output](https://github.com/user-attachments/assets/6be9b40e-75a7-4e14-a7c1-ffd68a9f4faa)
+
+Output obtained by using RISCV-GCC compiler:
+
+![riscv output](https://github.com/user-attachments/assets/fc294b67-0dbf-4b9f-a774-8a88508154db)
+
+Observation:
+
+We can see that, the output obtained in both cases is the same.
+  
+</details>
