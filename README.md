@@ -526,3 +526,65 @@ Observation:
 We can see that, the output obtained in both cases is the same.
   
 </details>
+
+<details>
+  <summary>LAB 6:</summary>
+  <details>
+    <summary>Day 5:</summary>
+    We have observed that we might get logical errors, due to some interdependencies of the values. For this, pipelining of the CPU core is done, which allows easy retiming and reduces discrepancies to a certain extent. Also, pipelining provides faster computation.
+
+Below are the diagrams and the various parts of the code:
+
+![5_1](https://github.com/user-attachments/assets/a0006833-9b3b-473e-94af-dc0561914493)
+    
+![5_2](https://github.com/user-attachments/assets/2e3ad5dd-0edc-475e-945a-72ab766cbf99)
+    
+![5_3](https://github.com/user-attachments/assets/05efbf3b-0ee2-4c5c-b4a9-116752d6ce97)
+    
+![5_4](https://github.com/user-attachments/assets/bcd37ed8-ea18-4156-8031-a592c43d9afa)
+    
+![5_5](https://github.com/user-attachments/assets/3a6c86bc-f66b-440e-99a7-bc2d521013da)
+    
+![5_6](https://github.com/user-attachments/assets/08558b71-7ddd-4853-ad3d-7e4423a18906)
+    
+![5_7](https://github.com/user-attachments/assets/4531c1d7-25ff-4309-b427-c4cfaa45b8bd)
+    
+![5_8](https://github.com/user-attachments/assets/27069faa-3d75-403a-b695-6988abae79e9)
+    
+![5_9](https://github.com/user-attachments/assets/7101e746-b1f3-406f-b8cb-c283e541f142)
+    
+![5_10](https://github.com/user-attachments/assets/3a7457ea-09c7-432a-9de6-b06e3e5c500a)
+    
+![5_11](https://github.com/user-attachments/assets/2c85858d-85e5-4e79-bc22-3c09e5edbab6)
+    
+![5_12](https://github.com/user-attachments/assets/5bd2fa2a-afbd-4b2a-b23c-e923bcaae3d9)
+
+Result:
+
+* Block Diagram :
+
+  ![5_block](https://github.com/user-attachments/assets/939aa4d0-aec0-4541-8815-6e5bbe96664a)
+
+* Viz Table : We can see that value of reg 14 reaches 45 after 54 cycles.
+
+  ![5_viz](https://github.com/user-attachments/assets/ae94c074-6515-46e5-bda6-c06ab03aa536)
+
+* Waveform:
+  * CLK named as clk_adi:
+
+    ![5_clk](https://github.com/user-attachments/assets/6473761f-9347-4f70-b8cc-4159fe318472)
+
+  * Reset waveform :
+
+    ![5_reset](https://github.com/user-attachments/assets/057cfe2b-9eb1-4569-b253-9b80c838f7b5)
+
+  * Final result waveform showing gradual increase:
+
+    ![5_xreg](https://github.com/user-attachments/assets/ab06991f-499c-41f3-8826-a963f10c97b5)
+
+Simulation Status :
+
+![5_sim](https://github.com/user-attachments/assets/725ff7e0-be79-4b95-b6b7-62e05fb596cc)
+
+  </details>
+</details>
