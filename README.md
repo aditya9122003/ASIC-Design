@@ -529,6 +529,34 @@ We can see that, the output obtained in both cases is the same.
 
 <details>
   <summary>LAB 6:</summary>
+
+  In this lab, we have to build a 5-stage pipelined RISC-V processor by following the detailed lab lectures on the VSDIAT platform.
+  
+  In this, we also have to use a unique clock signal name. The name should be constructed using the prefix "clk_", followed by the prefix of our name. In my case, the clock's name is "clk_adi".
+  
+  <details>
+  <summary>Day 4:</summary>
+  For the given code, the output waveforms and the block diagrams are as follows:
+    
+  Block Diagram:
+    
+  ![4_block](https://github.com/user-attachments/assets/0b01ae9d-f0e3-4d7e-b3bc-c475405f4ddb)
+
+  Waveform:
+  * CLK named as "clk_adi":
+    ![4_clk](https://github.com/user-attachments/assets/7a1ec691-fa1b-42e3-b2b4-6ff7c572b78b)
+  * Reset:
+    ![4_reset](https://github.com/user-attachments/assets/0f9c0e7c-dc76-41cf-8a2f-728509ddafe4)
+  * Final waveform:
+    ![4_final](https://github.com/user-attachments/assets/8b39a43b-3e3d-4d82-9a26-25944623aae9)
+
+  TestBench:
+  
+  To verify the correctness of the code, we use a testbench to check it during the first five cycles.
+  ![4_sim](https://github.com/user-attachments/assets/4d3b4637-d40a-4196-af5c-213fd78f2b47)
+
+  </details>
+  
   <details>
     <summary>Day 5:</summary>
     We have observed that we might get logical errors, due to some interdependencies of the values. For this, pipelining of the CPU core is done, which allows easy retiming and reduces discrepancies to a certain extent. Also, pipelining provides faster computation.
