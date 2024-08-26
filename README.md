@@ -639,7 +639,11 @@ $ sudo apt-get install python3-venv
 $ python3 -m venv .venv
 
 $ source ~/.venv/bin/activate
+```
 
+![7_1](https://github.com/user-attachments/assets/d266a19b-45dc-4151-be09-4608a0088f55)
+
+```
 $ pip3 install pyyaml click sandpiper-saas
 
 $ sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
@@ -653,28 +657,31 @@ $ pip3 install pyyaml click sandpiper-saas
 $ cd ~
 
 $ git clone https://github.com/manili/VSDBabySoC.git
+```
 
+![7_2](https://github.com/user-attachments/assets/b3398075-6283-4ffc-812f-818604c2051b)
+
+```
 $ cd /home/vsduser/VSDBabySoC
 
 $ make pre_synth_sim
 
 $ sandpiper-saas -i ./src/module/rvmyth.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+```
 
+![7_3](https://github.com/user-attachments/assets/7ffafc57-d3d1-47c1-98a3-4e89579d01c8)
+
+```
 $ iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
+```
 
+![7_4](https://github.com/user-attachments/assets/f71865b3-b0f5-46bc-ac0f-8806263ff8b4)
+
+```
 $ cd output
 
 $ ./pre_synth_sim.out
 ```
-Following are the photos of the terminal to show the progression of the following commands:
-
-![7_1](https://github.com/user-attachments/assets/d266a19b-45dc-4151-be09-4608a0088f55)
-
-![7_2](https://github.com/user-attachments/assets/b3398075-6283-4ffc-812f-818604c2051b)
-
-![7_3](https://github.com/user-attachments/assets/7ffafc57-d3d1-47c1-98a3-4e89579d01c8)
-
-![7_4](https://github.com/user-attachments/assets/f71865b3-b0f5-46bc-ac0f-8806263ff8b4)
 
 ![7_5](https://github.com/user-attachments/assets/6264ced7-cc22-4f0f-9772-a745b44f4ab0)
 
