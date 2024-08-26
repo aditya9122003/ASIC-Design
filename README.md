@@ -666,5 +666,39 @@ $ cd output
 
 $ ./pre_synth_sim.out
 ```
-  
+Following are the photos of the terminal to show the progression of the following commands:
+
+![7_1](https://github.com/user-attachments/assets/d266a19b-45dc-4151-be09-4608a0088f55)
+
+![7_2](https://github.com/user-attachments/assets/b3398075-6283-4ffc-812f-818604c2051b)
+
+![7_3](https://github.com/user-attachments/assets/7ffafc57-d3d1-47c1-98a3-4e89579d01c8)
+
+![7_4](https://github.com/user-attachments/assets/f71865b3-b0f5-46bc-ac0f-8806263ff8b4)
+
+![7_5](https://github.com/user-attachments/assets/6264ced7-cc22-4f0f-9772-a745b44f4ab0)
+
+![7_6](https://github.com/user-attachments/assets/5245abc1-ed4c-4de9-bd5e-fd57112908ab)
+
+  Following are the results (comparison between gtkwave waveforms and makerchip simulations):
+
+  * Clock waveform (clk_adi in my case):
+
+    ![clk_adi_7](https://github.com/user-attachments/assets/398c8fb0-ce79-4553-ad14-b9681f1d6102)
+    
+    ![clk_adi_6](https://github.com/user-attachments/assets/739a1441-04d6-4477-80e2-aac87324a0a8)
+
+  * Reset signal:
+
+    ![reset_7](https://github.com/user-attachments/assets/0cdc71c2-453e-4722-87fd-8c706f9d5500)
+    
+    ![reset_6](https://github.com/user-attachments/assets/37fb00ff-1427-47dd-bf6e-883076ef85f7)
+
+  * Final output waveform:
+
+    ![final_7](https://github.com/user-attachments/assets/2e419d22-8ff3-403e-87ec-5282e9b7c55f)
+
+    ![final_6](https://github.com/user-attachments/assets/bd92bfdc-3b5d-4f1b-9c2f-18f8c3eda225)
+
+  By this we can see that there is gradual increment. Both the waveforms eventually reach the value 45 (sum from 1 to 9).
 </details>
