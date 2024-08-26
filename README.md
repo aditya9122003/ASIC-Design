@@ -616,3 +616,55 @@ Simulation Status :
 
   </details>
 </details>
+
+<details>
+  <summary>LAB 7: </summary>
+  In this lab, we have to convert TLV to Verilog, as explained in the video using Sandpiper. In this we have to write a testbench for rvmyth. Also we have to use "iverilog" to simulate and use gtkwave to view the output waveforms. 
+  
+  After that we have to plot the following graphs using gtkwave:
+
+  * clock signal appended with your name ("clk_adi" in my case).
+  * reset signal
+  * 10-bit output which shows the gradual addition of 1 to 10 or 1 to 9 (1 to 9 in my case).
+
+For this, we have to use the following commands in the listed order:
+
+```
+$ sudo apt install make python3 python3 python3-pip git iverilog gtkwave
+
+$ cd ~
+
+$ sudo apt-get install python3-venv
+
+$ python3 -m venv .venv
+
+$ source ~/.venv/bin/activate
+
+$ pip3 install pyyaml click sandpiper-saas
+
+$ sudo apt install make python python3 python3-pip git iverilog gtkwave docker.io
+
+$ sudo chmod 666 /var/run/docker.sock
+
+$ cd ~
+
+$ pip3 install pyyaml click sandpiper-saas
+
+$ cd ~
+
+$ git clone https://github.com/manili/VSDBabySoC.git
+
+$ cd /home/vsduser/VSDBabySoC
+
+$ make pre_synth_sim
+
+$ sandpiper-saas -i ./src/module/rvmyth.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+
+$ iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
+
+$ cd output
+
+$ ./pre_synth_sim.out
+```
+  
+</details>
