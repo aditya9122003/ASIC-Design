@@ -709,3 +709,39 @@ $ ./pre_synth_sim.out
 
   By this we can see that there is gradual increment. Both the waveforms eventually reach the value 45 (sum from 1 to 9).
 </details>
+
+<details>
+  <summary>LAB 8: </summary>
+In this lab, we have to first install iverilog, gtkwave, yosys and opensta on our personal machines. Then we have to download all the files from BabySoC link, and edit the vsdbabysoc top level verilog code.
+
+Then we had to generate waveform for DAC and PLL for RISC-V processor.
+
+Firstly, we install iverilog, gtkwave, yosys, and opensta on our system.
+
+![iverilog](https://github.com/user-attachments/assets/f8d51c63-db40-4ecd-ae7e-5a7b8b5639e3)
+
+![yosys](https://github.com/user-attachments/assets/faa508f9-1d3e-4125-ba19-6427f2129e99)
+
+Then, we edit the top-level code verilog code for the vsdbabysoc to achieve the desired results.
+
+And finally, run the following commands to show and perform the functional simulation.
+
+```
+cd BabySoC_Simulation
+iverilog -o ./pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module/
+./pre_synth_sim.out
+gtkwave pre_synth_sim.vcd
+```
+
+![gtkwave_terminal](https://github.com/user-attachments/assets/eef4446a-48e6-47ce-825b-91edadbb6a37)
+
+Results:
+
+Following are the waveforms generated:
+
+![uncondensed_form](https://github.com/user-attachments/assets/68a6ca09-3dfd-4995-a675-416898c42856)
+
+![condensed_form_graph](https://github.com/user-attachments/assets/90ec0925-fe1c-4811-9774-ca7b284cc6e2)
+
+
+</details>
