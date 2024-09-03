@@ -714,7 +714,7 @@ $ ./pre_synth_sim.out
   <summary>LAB 8: </summary>
 In this lab, we have to first install iverilog, gtkwave, yosys and opensta on our personal machines. Then we have to download all the files from BabySoC link, and edit the vsdbabysoc top level verilog code.
 
-Then we had to generate waveform for DAC and PLL for RISC-V processor.
+Then we had to generate DAC and PLL waveform for RISC-V processor.
 
 Firstly, we install iverilog, gtkwave, yosys, and opensta on our system.
 
