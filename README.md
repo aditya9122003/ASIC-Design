@@ -745,3 +745,282 @@ Following are the waveforms generated:
 
 
 </details>
+
+<details>
+  <summary>LAB 9: </summary>
+  <details>
+  <summary>Day 1:</summary>
+    
+  ![day1_abc](https://github.com/user-attachments/assets/25b06e57-88b0-476b-9fed-8fdf947e79e5)
+
+  ![day1_gtkwave_command](https://github.com/user-attachments/assets/fd0e2cda-da82-40a9-a4da-b286d6ffa7f4)
+
+  ![day1_gtkwave](https://github.com/user-attachments/assets/6d7ab422-ee6f-449e-81f7-122adbe683fa)
+
+  ![day1_printing_statistics](https://github.com/user-attachments/assets/ff8349e7-9da3-485a-ab27-68e4c7519f27)
+
+  ![day1_schematic](https://github.com/user-attachments/assets/b1ed3bdb-a61a-43ef-88a3-aacafdfe6950)
+
+  ![day1_caat_image](https://github.com/user-attachments/assets/c8c4ac4d-44a4-4744-8534-cc3c578906c9)
+  
+  </details>
+
+  <details>
+  <summary>Day 2: </summary>
+
+  ![day2_vim1](https://github.com/user-attachments/assets/3c76d434-6fcc-47e7-b74e-cab3fa89882b)
+
+  ![day2_vim2](https://github.com/user-attachments/assets/4ae9c21c-e542-4296-a645-76cb51c795a9)
+
+  ![day2_vim3](https://github.com/user-attachments/assets/2306c15b-2d52-44c0-9e2d-680d3a933ea8)
+
+  ![day2_vim4](https://github.com/user-attachments/assets/690abd6f-283e-41cc-a489-a1acd0260ff7)
+
+  * Hierarchical Synthesis:
+
+    ![day2_printstats](https://github.com/user-attachments/assets/596998a5-5b72-4e4b-9a9a-df1215327089)
+
+    ![day2_schematic1](https://github.com/user-attachments/assets/3ac72400-999f-4617-9efe-9bcd9e2d99b0)
+
+    ![day2_vimcode1](https://github.com/user-attachments/assets/b8428971-49ce-4ac1-8de0-a3a76ac0bc9e)
+
+  * Flat Synthesis:
+
+    ![day2_printstats2](https://github.com/user-attachments/assets/a780ccf7-2fa7-4da7-9d6b-6a14de16aee7)
+
+    ![day2_schematic2](https://github.com/user-attachments/assets/7e2a38c1-df55-4113-8677-d40c4113f1a5)
+
+    ![day2_vimcode2](https://github.com/user-attachments/assets/296435aa-e727-4a29-9ac7-9d437a773d7c)
+
+  * Sub Module Level Synthesis:
+
+    ![day2_printstats3](https://github.com/user-attachments/assets/492bb57e-1059-4f80-bb54-af6b3509e60a)
+
+    ![day2_schematic3](https://github.com/user-attachments/assets/d01d15f6-766d-416d-9820-bee280567a7d)
+
+  * Flip-Flop Design and Optimization Techniques:
+    * Asynchronous Reset Flip-Flop:
+
+      ![day2_gtkwave1](https://github.com/user-attachments/assets/9220cf8c-67ee-4a87-9127-e64c6144ca57)
+      
+      ![day2_printstats4](https://github.com/user-attachments/assets/789c02fb-7513-4ac5-b650-83f08bfd3c61)
+
+      ![day2_schematic4](https://github.com/user-attachments/assets/32292694-6ab3-4bd6-be6a-f51e03fe9375)
+
+    * Synchronous Reset Flip-Flop:
+   
+      ![day2_gtkwave2](https://github.com/user-attachments/assets/633de672-236a-4ee9-8f02-48eec2a782f6)
+
+      ![day2_printstats5](https://github.com/user-attachments/assets/28fbad73-ae14-40bc-9a09-929cfe74f267)
+
+      ![day2_schematic5](https://github.com/user-attachments/assets/8868228f-c804-412a-9f92-aadd4f423f41)
+
+    * Asynchronous Set Flip-Flop:
+   
+      ![day2_gtkwave3](https://github.com/user-attachments/assets/35ee1ced-32bc-4d00-8ecc-5387e5615be7)
+
+      ![day2_printstats6](https://github.com/user-attachments/assets/b8dcaba6-8ef2-4edc-9b8f-a707b69cdc3b)
+
+      ![day2_schematic6](https://github.com/user-attachments/assets/7cc95f79-5ae5-4a10-bbbd-153999390bf7)
+
+    * Design Optimizations:
+   
+      * Example 1: Multiplication by 2
+  
+        ![day2_printstats7](https://github.com/user-attachments/assets/1438b674-2b7a-420c-bc9f-d499c40bed3c)
+
+        ![day2_schematic7](https://github.com/user-attachments/assets/f975c7e1-371f-471d-86f6-1eda456b3228)
+
+      * Example 2: Multiplication by 8
+
+        ![day2_printstats8](https://github.com/user-attachments/assets/6542429a-800e-413b-a0a6-8f101dadfb35)
+
+        ![day2_schematic8](https://github.com/user-attachments/assets/73710f4a-dace-4d02-bed6-2faf415b9af9)
+
+    </details>
+
+    <details>
+    <summary>Day 3:</summary>
+    * Combinational Optmization:
+      
+      * Example 1: Multiplexer to AND Gate Optimization
+  
+        ![day3_printstat1](https://github.com/user-attachments/assets/41001244-73b4-4ba9-a7c5-04b64b108cb5)
+  
+        ![day3_schematic1](https://github.com/user-attachments/assets/ccdfe9e2-0553-4a8b-8bff-ee6b8eb9bc3f)
+  
+        ![day3_vim](https://github.com/user-attachments/assets/556bb7d6-075a-4a29-b9d6-474447388489)
+  
+      * Example 2: OR Gate Implementation from Multiplexer
+     
+        ![day3_printstat2](https://github.com/user-attachments/assets/aee556c8-f39c-4f37-bd6f-641ab9a9a85f)
+  
+        ![day3_schematic2](https://github.com/user-attachments/assets/e9de8162-28b9-49b1-9f47-f97d5f760166)
+  
+        ![day3_vim2](https://github.com/user-attachments/assets/f73a52d7-80dc-4035-9c4a-3f16680a85a3)
+  
+      * Example 3: Optimizing a 3-Input AND Gate
+     
+        ![day3_printstat3](https://github.com/user-attachments/assets/7aa6d127-471b-44ac-aec4-18a4069a94a2)
+  
+        ![day3_schematic3](https://github.com/user-attachments/assets/d95c04f2-f4d4-4579-a6f8-bc7d015a0ed1)
+  
+        ![day3_vim3](https://github.com/user-attachments/assets/f1157250-2c15-4f34-9b08-bc7f0723eb8f)
+  
+      * Example 4: Transforming to a 2-Input XNOR Gate
+     
+        ![day3_printstat4](https://github.com/user-attachments/assets/95056fd8-b65f-46a7-ad35-4a11d9c56991)
+  
+        ![day3_schematic4](https://github.com/user-attachments/assets/af4d6e41-9633-4244-b78f-7d9f163ac5f6)
+  
+        ![day3_vim4](https://github.com/user-attachments/assets/589a1971-0d5e-466b-8862-613223eca0da)
+  
+      * Example 5: Optimization of a Complex Multi-Module Design
+     
+        ![day3_printstat5](https://github.com/user-attachments/assets/ef2ae289-0327-4694-94be-ddd70b5aac97)
+  
+        ![day3_schematic5](https://github.com/user-attachments/assets/99044aed-a578-4eb9-a0a1-bb3cb9e7f3d4)
+  
+        ![day3_vim5](https://github.com/user-attachments/assets/66b1c82a-995b-4633-b7aa-8dabc14d8876)
+  
+      * Example 6: Design Simplified to Constant Output (Y=0)
+     
+        ![day3_printstat6](https://github.com/user-attachments/assets/81d0749a-6c7c-4944-b706-ad3f2ba6833d)
+  
+        ![day3_schematic6](https://github.com/user-attachments/assets/c78ce31b-8ad2-4f16-b826-fd8735f82f39)
+  
+        ![day3_vim6_1](https://github.com/user-attachments/assets/56baf2b5-d72b-4149-8f59-935e7648121c)
+  
+        ![day3_vim6_2](https://github.com/user-attachments/assets/024e9368-b4dd-45cb-a13e-3524350e81d3)
+
+* Sequential Logic Optimizations:
+      
+  * Example 1: Constant Output Flip-Flop (Logic 1)
+
+      ![day3_printstat7](https://github.com/user-attachments/assets/f6c08a42-c164-4275-ad25-6c841a937cc4)
+
+      ![day3_schematic7](https://github.com/user-attachments/assets/f30b2127-931f-4e84-8133-9cd70842a1cb)
+
+      ![day3_vim7](https://github.com/user-attachments/assets/0cf20169-6890-4f63-9072-3b51086cf5c6)
+
+      ![day3_gtkwave1](https://github.com/user-attachments/assets/fba17cc9-4e9e-4ae1-966f-5e8c0b696a92)
+
+  * Example 2: Constant High Flip-Flop (Hardwired 1)
+ 
+    ![day3_printstat8](https://github.com/user-attachments/assets/70075875-366b-4241-ba4e-bebc034a607b)
+ 
+    ![day3_schematic8](https://github.com/user-attachments/assets/9da39131-24e7-4128-83fa-8318284cf02d)
+ 
+    ![day3_vim8](https://github.com/user-attachments/assets/b394e70f-a301-4b1c-92f7-977e49b6abed)
+ 
+    ![day3_gtkwave2](https://github.com/user-attachments/assets/d2c40e0b-85f5-4dc2-986b-bcd6e0ba5ed7)
+ 
+  * Example 3: DFF with Intermediate Flip-Flop
+ 
+    ![day3_printstat9](https://github.com/user-attachments/assets/5bb29d27-a43b-4789-ac66-e5f19d03b024)
+ 
+    ![day3_schematic9](https://github.com/user-attachments/assets/17512c40-511e-456d-ab93-2999761ca3d1)
+ 
+    ![day3_vim9](https://github.com/user-attachments/assets/87a293ce-0262-451e-870b-e3e0254233c3)
+ 
+    ![day3_gtkwave3](https://github.com/user-attachments/assets/1417f3f0-b6dc-470e-8e8f-aef2e2ba7243)
+
+  * Example 4: Redundant Constant Assignment Flip-Flop
+ 
+    ![day3_printstat10](https://github.com/user-attachments/assets/27794f33-b465-484d-b662-0608cfb9b098)
+ 
+    ![day3_schematic10](https://github.com/user-attachments/assets/3cf649f1-7fd6-4c93-9d8c-bdc286c3541b)
+ 
+    ![day3_vim10](https://github.com/user-attachments/assets/8294e8fe-6149-45e1-8093-434db8f02246)
+ 
+    ![day3_gtkwave4](https://github.com/user-attachments/assets/90cd6363-5988-4c40-9e7a-1af4602bf640)
+
+  * Example 5: Unused Flip-Flop
+ 
+    ![day3_printstat11](https://github.com/user-attachments/assets/4d424798-95bc-4ca2-8bbd-60abee6f96e8)
+ 
+    ![day3_schematic11](https://github.com/user-attachments/assets/c44cadec-dd9f-43de-ae99-5b9337ad9647)
+ 
+    ![day3_vim11](https://github.com/user-attachments/assets/66c3e7b6-8ef5-474c-a7ec-ad4a873b32f3)
+ 
+    ![day3_gtkwave5](https://github.com/user-attachments/assets/d8a9db75-5302-4088-bffd-ba08832383aa)
+
+* Optimizing Unused Outputs in Corners
+
+  * Example 1: Simple Counter with Unused Bits
+
+    ![day3_printstat12](https://github.com/user-attachments/assets/0052579c-d516-4fab-8905-5758aa97ff2b)
+
+    ![day3_schematic12](https://github.com/user-attachments/assets/b25e8603-1ad8-4799-aa10-e3955efd7cb9)
+
+    ![day3_vim12](https://github.com/user-attachments/assets/a8572d43-1fe3-4f36-a071-e559c0efc87e)
+
+    ![day3_gtkwave6](https://github.com/user-attachments/assets/faf82437-096a-4c04-b5ba-ac9af7a49a6b)
+
+  * Modified Counter Logic: Reducing Unused Bits
+ 
+    ![day3_printstat13](https://github.com/user-attachments/assets/07b42c51-7c27-4ab9-8374-c80bf8c7e171)
+ 
+    ![day3_schematic13](https://github.com/user-attachments/assets/940ab766-ec15-4bab-bce4-d67d64068f4c)
+ 
+    ![day3_vim13_1](https://github.com/user-attachments/assets/1094d634-c0dd-4b0f-bcb0-510384ca5e59)
+ 
+    ![day3_vim13_2](https://github.com/user-attachments/assets/7438ab5f-614f-4fb9-986e-39d7a5c86dd9)
+ 
+    ![day3_gtkwave7](https://github.com/user-attachments/assets/ae31a124-17f2-49c0-aa25-917f43eba722)
+
+    </details>
+
+    <details>
+ 
+    <summary>Day 4:</summary> 
+ 
+    * Example 1: Basic Ternary Mux
+    
+      ![day4_gtkwave1](https://github.com/user-attachments/assets/dfa58311-9083-45f3-988d-d076d9f04668)
+ 
+      ![day4_printstat1](https://github.com/user-attachments/assets/2bb5f8cb-d88a-4547-a8cd-95c96f32296b)
+ 
+      ![day4_schematic1](https://github.com/user-attachments/assets/a0de5a30-5389-4db9-b9fc-c9a7b3694cb3)
+ 
+      ![day4_vim1](https://github.com/user-attachments/assets/37672440-817d-4c3d-9755-d1d1f0287cdd)
+ 
+      Gate Level Simulation
+ 
+        ![day4_gtkwave1_new](https://github.com/user-attachments/assets/0e98ac10-8bee-4360-b7fc-8475ec942d00)
+
+    * Example 2: Bad MUX Example
+   
+      ![day4_gtkwave2](https://github.com/user-attachments/assets/3edc0a92-222e-4a9d-91db-a5a60850a1e4)
+
+      ![day4_printstat2](https://github.com/user-attachments/assets/7e80a9c1-dce6-481e-995e-843c915ef92b)
+ 
+      ![day4_schematic2](https://github.com/user-attachments/assets/f9eb9196-a05c-41a3-a673-7416da387c15)
+ 
+      ![day4_vim2](https://github.com/user-attachments/assets/1f5972a8-8862-4ece-a9d6-d50e10de576f)
+ 
+      Gate Level Simulation
+ 
+        ![day4_gtkwave2_new](https://github.com/user-attachments/assets/24ac8408-3183-4697-95b1-dff65a7a195a)
+
+    * Investigation of Synthesis-Simulation Mismatches for Blocking Assignments
+   
+      ![day4_gtkwave3](https://github.com/user-attachments/assets/177d9512-df60-457e-96fe-38128d62ae7d)
+
+      ![day4_schematic3](https://github.com/user-attachments/assets/75bd07f6-e931-462e-a057-db378fe7611b)
+
+      ![day4_vim3](https://github.com/user-attachments/assets/b97e6447-e0e5-485e-9e3b-8fcf62c201cb)
+ 
+      Gate Level Simulation
+ 
+        ![day4_gtkwave4](https://github.com/user-attachments/assets/99ed3ca7-43be-4cdb-b6b9-4d54b98924f3)
+
+
+        
+
+
+
+      
+    </details>
+    
+</details>
