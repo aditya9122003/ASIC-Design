@@ -984,6 +984,8 @@ Following are the waveforms generated:
       ![day4_schematic1](https://github.com/user-attachments/assets/a0de5a30-5389-4db9-b9fc-c9a7b3694cb3)
  
       ![day4_vim1](https://github.com/user-attachments/assets/37672440-817d-4c3d-9755-d1d1f0287cdd)
+
+      GLS results show no mismatch between pre-synthesis and post-synthesis waveforms:
  
       Gate Level Simulation
  
@@ -1000,7 +1002,9 @@ Following are the waveforms generated:
       ![day4_vim2](https://github.com/user-attachments/assets/1f5972a8-8862-4ece-a9d6-d50e10de576f)
  
       Gate Level Simulation
- 
+
+        GLS results show a mismatch between pre- and post-synthesis due to the incorrect sensitivity list, which Yosys corrected during synthesis:
+
         ![day4_gtkwave2_new](https://github.com/user-attachments/assets/24ac8408-3183-4697-95b1-dff65a7a195a)
 
     * Investigation of Synthesis-Simulation Mismatches for Blocking Assignments
@@ -1012,9 +1016,12 @@ Following are the waveforms generated:
       ![day4_vim3](https://github.com/user-attachments/assets/b97e6447-e0e5-485e-9e3b-8fcf62c201cb)
  
       Gate Level Simulation
- 
-        ![day4_gtkwave4](https://github.com/user-attachments/assets/99ed3ca7-43be-4cdb-b6b9-4d54b98924f3)
 
+        GLS results show a mismatch between the RTL and post-synthesis waveforms due to the latch created by incorrect blocking assignments, which was fixed during synthesis by Yosys:
+    
+        ![day4_gtkwave4](https://github.com/user-attachments/assets/99ed3ca7-43be-4cdb-b6b9-4d54b98924f3)
+ 
+        This illustrates how synthesis tools can correct certain errors, but it's still crucial to write clean Verilog code to avoid mismatches and unintended behaviors.
 
         
 
