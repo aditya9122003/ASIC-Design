@@ -1031,3 +1031,46 @@ Following are the waveforms generated:
     </details>
     
 </details>
+
+<details>
+  <summary>Lab 10:</summary>
+  In this lab, we must synthesize RISC-V and compare output with functional simulations. The GitHub repo should consist of the following:
+  
+  1) Functionality vs Synthesized output waveform comparison. They should match. Plot at least for the top 20 cycles (20 ups and 20 downs).
+  2) Synthesize output window CLEARLY showing standard cells in the gtkwave window and your login name.
+
+  Synthesis:
+
+  ![command-1](https://github.com/user-attachments/assets/62226516-9efe-441c-a268-81617e217da6)
+
+  ![yosys command](https://github.com/user-attachments/assets/9f80bdc0-3c7b-4607-a3a3-b0ff65411985)
+
+  ![netlist](https://github.com/user-attachments/assets/1a96da67-fa33-43e9-8e3b-4ba12d22780e)
+
+  ![!vim image](https://github.com/user-attachments/assets/c5c5aef0-4cf4-4af2-a7db-71bab2d2f9f3)
+
+  ![gtkwave_dump vcd](https://github.com/user-attachments/assets/55eef9f5-4876-45ae-8787-b25c5d977f31)
+
+  ![1](https://github.com/user-attachments/assets/95ec4b03-2d31-41e6-904f-924b4ad2192a)
+
+  ![2](https://github.com/user-attachments/assets/17f0e757-4e48-428f-8a8e-d0f9c35053a6)
+
+  Realization:
+
+  ![schematic1](https://github.com/user-attachments/assets/6ddfa960-e93c-46f1-a581-ed3106005d29)
+
+  ![schematic2](https://github.com/user-attachments/assets/1be380f9-9442-420a-81bc-0371352ae0dd)
+
+  ![schematic4](https://github.com/user-attachments/assets/97a9c3df-dfd6-4afb-83b7-14c189ea128e)
+
+  ![schematic3](https://github.com/user-attachments/assets/d1277d3b-9726-47ae-a266-259a86a9d972)
+
+  RTL Simulation:
+
+  ![rtl_0](https://github.com/user-attachments/assets/87a12330-4256-453c-a2df-6cb15a194cfc)
+
+  ![rtl_1](https://github.com/user-attachments/assets/945fa794-a1c3-4dd6-b401-484dbf46e7fe)
+
+  ![rtl_2](https://github.com/user-attachments/assets/d4d1a7fb-5cfb-44eb-8e28-704eefb55f9a)
+
+</details>
