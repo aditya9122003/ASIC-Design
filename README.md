@@ -1074,3 +1074,50 @@ Following are the waveforms generated:
   ![rtl_2](https://github.com/user-attachments/assets/d4d1a7fb-5cfb-44eb-8e28-704eefb55f9a)
 
 </details>
+
+<details>
+<summary>Lab 11:</summary>
+
+Contents of sdc file:
+
+```
+set PERIOD 11.1
+
+set_units -time ns
+create_clock [get_pins {pll/CLK}] -name clk -period $PERIOD
+set_clock_uncertainty -setup  [expr $PERIOD * 0.05] [get_clocks clk]
+set_clock_transition [expr $PERIOD * 0.05] [get_clocks clk]
+set_clock_uncertainty -hold [expr $PERIOD * 0.08] [get_clocks clk]
+set_input_transition [expr $PERIOD * 0.08] [get_ports ENb_CP]
+set_input_transition [expr $PERIOD * 0.08] [get_ports ENb_VCO]
+set_input_transition [expr $PERIOD * 0.08] [get_ports REF]
+set_input_transition [expr $PERIOD * 0.08] [get_ports VCO_IN]
+set_input_transition [expr $PERIOD * 0.08] [get_ports VREFH]
+```
+
+Run the following commands:
+
+```
+cd VSDBabySoc/src
+sta
+read_liberty -min ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -min ./lib/avsdpll.lib
+read_liberty -min ./lib/avsddac.lib
+read_liberty -max ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max ./lib/avsdpll.lib
+read_liberty -max ./lib/avsddac.lib
+read_verilog ../output/synth/vsdbabysoc.synth.v
+link_design vsdbabysoc
+read_sdc ./sdc/vsdbabysoc_synthesis.sdc
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+```
+
+Setup Time:
+
+![pic2](https://github.com/user-attachments/assets/9a56c647-081a-43b6-bcc9-6bf4345636e6)
+
+Hold Time:
+
+![pic1](https://github.com/user-attachments/assets/5d5342f1-ce1a-4a6f-8214-42e5ee2f2fdf)
+
+</details>
