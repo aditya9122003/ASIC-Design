@@ -1479,11 +1479,154 @@ Worst Hold Slack:
     Rise Transition Time = time(slew-high-rise-thr) − time(slew-low-rise-thr) 
 
     ```
-    
-
-
-
-
   
+  </details>
+
+  <details>
+  <summary>Day 3:</summary>
+
+  * CMOS Custom Inverter Simulation:
+
+    * Cloning and Setting Up Custom Inverter:
+
+      Clone the custom inverter library for use with the OpenLane toolchain:
+  
+      ```
+        
+      cd Desktop/work/tools/openlane_working_dir/openlane
+      git clone https://github.com/nickson-jose/vsdstdcelldesign
+      cd vsdstdcelldesign
+      cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+      magic -T sky130A.tech sky130_inv.mag &
+      
+      ```
+    
+      ![day3_1](https://github.com/user-attachments/assets/f87b16a0-c79a-4478-b25f-a7feb8f546eb)
+
+  * Inverter Layout and CMOS Fabrication Process:
+
+    NMOS Transistor:
+
+      ![day3_2](https://github.com/user-attachments/assets/b748be5b-a60d-4a35-83fe-86fc0c4bea49)
+
+    PMOS Transistor:
+
+      ![day3_3](https://github.com/user-attachments/assets/43536688-c06a-4b24-90d6-bc3e3e43d1b2)
+
+    Output Y:
+
+      ![day3_4](https://github.com/user-attachments/assets/bf0dcf8e-0a8d-437e-b568-cb4d39adf8cd)
+
+  * SPICE Extraction in Magic:
+ 
+    * Run SPICE Extraction Commands: In Magic's tckon window
+
+      ```
+      extract all
+      ext2spice cthresh 0 rthresh 0
+      ext2spice
+      ```
+ 
+      ![day3_6](https://github.com/user-attachments/assets/0787dd83-f187-4cab-8b4b-ff3f319c90cc)
+
+    * View SPICE File:
+   
+      ```
+      * SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+      .option scale=10m
+      
+      .subckt sky130_inv A Y VPWR VGND
+      X0 Y A VGND VGND sky130_fd_pr__nfet_01v8 ad=1.44n pd=0.152m as=1.37n ps=0.148m w=35 l=23
+      X1 Y A VPWR VPWR sky130_fd_pr__pfet_01v8 ad=1.44n pd=0.152m as=1.52n ps=0.156m w=37 l=23
+      C0 VPWR Y 0.117f
+      C1 A Y 0.0754f
+      C2 A VPWR 0.0774f
+      C3 Y VGND 0.279f
+      C4 A VGND 0.45f
+      C5 VPWR VGND 0.781f
+      .ends
+      ```
+    
+      ![image](https://github.com/user-attachments/assets/0b82ca08-e857-45ec-aa26-f9eaca416401)
+
+      Edit "sky130_inv.spice":
+   
+      ```
+      * SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+      .option scale=0.01u
+      .include ./libs/pshort.lib
+      .include ./libs/nshort.lib
+      
+      M1000 Y A VGND VGND nshort_model.0 w=35 l=23
+      +  ad=1.44n pd=0.152m as=1.37n ps=0.148m
+      M1001 Y A VPWR VPWR pshort_model.0 w=37 l=23
+      +  ad=1.44n pd=0.152m as=1.52n ps=0.156m
+      
+      VDD VPWR 0 3.3V
+      VSS VGND 0 0V
+      Va A VGND PULSE(0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+      
+      .tran 1n 20n
+      .control
+      run
+      .endc
+      .end
+      ```
+   
+      Run the modified file in ngspice:
+   
+      ```
+      ngspice sky130_inv.spice
+      ```
+    
+      ![day3_8](https://github.com/user-attachments/assets/d3a880bd-3b59-47f1-855d-d07eb5c17a83)
+   
+      Plot of the waveform:
+   
+      ```
+      plot y vs time a
+      ```
+    
+      ![day3_9](https://github.com/user-attachments/assets/6b1c9bc0-962d-4845-9f2c-b8699823d057)
+   
+      Timing calculations:
+   
+      ```
+      Rise Transition : 2.2424 - 2.1819 = 0.0605 = 60.6 ps
+      Fall Transition : 4.0955 - 4.05536 =  0.0419 ns = 41.9 ps
+      Rise Cell Delay =  2.20722 - 2.1501 = 0.05712 = 57.12 ps
+      Cell Fall Delay : 4.07807 - 4.05 =0.02 ns = 20 ps
+      ```
+  * Magic Tool DRC Rules:
+ 
+    * Download DRC Tests:
+
+      ```
+      cd ~
+      wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+      tar xfz drc_tests.tgz
+      cd drc_tests
+      gvim .magicrc
+      magic -d XR & 
+      ```
+      ![day3_10](https://github.com/user-attachments/assets/b9a685bd-2e13-4208-8805-9da9a2baf6f6)
+    
+      ![day3_11](https://github.com/user-attachments/assets/c0ffba10-1ed6-40bd-ba0e-c2877f6cf12d)
+
+    * Run DRC commands:
+
+      ```
+      tech load sky130A.tech 
+      drc check 
+      drc why 
+      ```
+      ![image](https://github.com/user-attachments/assets/6aefcd07-85e6-4a86-8ed0-f62834324c6b)
+
+      ![image](https://github.com/user-attachments/assets/4ac0be57-7cf1-4df0-a68d-6a49a6f5848d)
+
+
+
   </details>
 </details>
