@@ -1594,10 +1594,10 @@ Worst Hold Slack:
       Timing calculations:
    
       ```
-      Rise Transition : 2.2424 - 2.1819 = 0.0605 = 60.6 ps
-      Fall Transition : 4.0955 - 4.05536 =  0.0419 ns = 41.9 ps
-      Rise Cell Delay =  2.20722 - 2.1501 = 0.05712 = 57.12 ps
-      Cell Fall Delay : 4.07807 - 4.05 =0.02 ns = 20 ps
+      Rise Transition : 2.23965 ns - 2.1804 ns = 0.05925 ns = 59.25 ps
+      Fall Transition : 4.09328 ns - 4.05058 ns = 0.04270 ns = 42.70 ps
+      Rise Cell Delay =  2.20712 ns - 2.1501 ns = 0.05712 ns = 57.02 ps
+      Cell Fall Delay : 4.07807 ns - 4.05 ns = 0.02807 ns = 28.07 ps
       ```
   * Magic Tool DRC Rules:
  
