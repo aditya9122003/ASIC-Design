@@ -1629,4 +1629,39 @@ Worst Hold Slack:
 
 
   </details>
+
+  <details>
+
+  <summary>Day 4:</summary>
+
+  ![day4_1](https://github.com/user-attachments/assets/4bc0c642-9acc-45d0-befe-c446c51f5207)
+
+  ![day4_2](https://github.com/user-attachments/assets/93d7e637-4782-49de-a749-8f4da7623309)
+
+  ![day4_3](https://github.com/user-attachments/assets/5f2e8e46-ecff-4809-beaa-98e7fc87e8b4)
+
+  ![day4_4](https://github.com/user-attachments/assets/1a28a7f5-6296-4de8-9b8f-2e1c091a473b)
+
+  ![day4_5](https://github.com/user-attachments/assets/f7cce7cf-b2e9-4080-b9bb-f74058723714)
+
+  ![day4_6](https://github.com/user-attachments/assets/47464ef3-1515-4634-86ab-4bd4bec6eb29)
+
+  ![day4_7](https://github.com/user-attachments/assets/817b7d31-af13-4fdc-a044-b640ebedb3a1)
+
+  ![day4_8](https://github.com/user-attachments/assets/a8e536aa-0296-4cbe-ae99-5d5399188b50)
+
+  ![day4_9](https://github.com/user-attachments/assets/877a1e46-1f6b-42c7-ad58-31d3a70e2f45)
+
+  ![day4_10](https://github.com/user-attachments/assets/a420b872-81d6-4540-9a23-9f6f13135488)
+
+  ![day4_11](https://github.com/user-attachments/assets/37f13a9d-f8bb-41b1-9b42-55045f29fa70)
+
+  ![day4_12](https://github.com/user-attachments/assets/b53eff5b-ec5f-4d91-a80d-5f7def88839a)
+
+  ![day4_13](https://github.com/user-attachments/assets/48cee278-2c86-4fb4-b766-c29c7531eaa4)
+
+  ![day4_14](https://github.com/user-attachments/assets/403aeffb-dba0-4c99-991d-67f8b564cda6)
+
+  </details>
+  
 </details>
