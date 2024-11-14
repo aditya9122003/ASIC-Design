@@ -1389,7 +1389,7 @@ Worst Hold Slack:
 
     ```
     
-    cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/11-11_16-28/results/floorplan/
+    cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_16-53/results/floorplan/
     magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 
     ```
