@@ -1634,7 +1634,21 @@ Worst Hold Slack:
 
   <summary>Day 4:</summary>
 
+  Commands to extract "tracks.info" file:
+
+  ```
+  cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+  cd ../../pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/
+  less tracks.info
+  ```
+
   ![day4_1](https://github.com/user-attachments/assets/4bc0c642-9acc-45d0-befe-c446c51f5207)
+
+  Commands to set grid for tkcon window:
+
+  ```
+  grid 0.46um 0.34um 0.23um 0.17um
+  ```
 
   ![day4_2](https://github.com/user-attachments/assets/93d7e637-4782-49de-a749-8f4da7623309)
 
@@ -1662,6 +1676,120 @@ Worst Hold Slack:
 
   ![day4_14](https://github.com/user-attachments/assets/403aeffb-dba0-4c99-991d-67f8b564cda6)
 
+  </details>
+
+  <details>
+
+  <summary>Day 5:</summary>
+
+  Commands to be performed:
+
+  ```
+  cd Desktop/work/tools/openlane_working_dir/openlane
+  docker
+  
+  ./flow.tcl -interactive
+  package require openlane 0.9
+  prep -design picorv32a
+  set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+  add_lefs -src $lefs
+  set ::env(SYNTH_STRATEGY) "DELAY 3"
+  set ::env(SYNTH_SIZING) 1
+  run_synthesis
+  init_floorplan
+  place_io
+  tap_decap_or
+  run_placement
+  run_cts
+  gen_pdn
+  ```
+
+  ![day5_1](https://github.com/user-attachments/assets/0463b917-8614-4df5-99a9-f43497c46916)
+
+  ![day5_2](https://github.com/user-attachments/assets/192d317d-8a4d-41d2-943d-7a8c72831ef3)
+
+  ![day5_3](https://github.com/user-attachments/assets/944cef49-d27e-4d39-8116-9505ba256afa)
+
+  ![day5_4](https://github.com/user-attachments/assets/a55ef19b-1746-4fda-8acb-a51dcf1036e5)
+
+  Then in a new terminal navigate to the floorplan directory and open Magic:
+
+  ```
+  cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-11_18-04/tmp/floorplan/
+  magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 14-pdn.def &
+  ```
+
+  ![day5_5](https://github.com/user-attachments/assets/bac6c6e2-8ceb-4743-af28-948078de88b4)
+
+  ![day5_6](https://github.com/user-attachments/assets/1e406eb8-0684-4eda-a569-fbf6fe5363c6)
+
+  ![day5_7](https://github.com/user-attachments/assets/59fffc78-92f4-400e-beca-68aff59f8369)
+
+  Detailed Routing with TritonRoute:
+
+  ```
+  echo $::env(CURRENT_DEF)
+  echo $::env(ROUTING_STRATEGY)
+  run_routing
+  ```
+  Open a new terminal, and navigate to the floorplan directory and open Magic:
+
+  ```
+  cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-11_18-04/results/routing/
+  magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
+  ```
+
+  ![day5_8](https://github.com/user-attachments/assets/2b3d7c9d-c45a-44f4-a408-163c874401b4)
+
+  ![day5_9](https://github.com/user-attachments/assets/f7b97747-619a-4f48-a2b3-cdaa126ed8a6)
+
+  The faster route:
+
+  ![day5_10](https://github.com/user-attachments/assets/4d6e3e09-24a6-43b5-a458-cfab8bcfc885)
+
+  SPEF Exrtaction for Parasitic Analysis:
+
+  For Post-Route parasitic extraction, go to "spef_extractor" directory and run:
+
+  ```
+  cd Desktop/work/tools/openlane_working_dir/openlane/scripts/spef_extractor
+  python3 main.py -l /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/14-11_18-04/tmp/merged.lef -d /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/    runs/14-11_18-04/results/routing/picorv32a.def
+  ```
+
+  ![day5_11](https://github.com/user-attachments/assets/ed9fe4a9-9cdb-48bd-b67f-ec5fdb843b4b)
+
+  Post-Route Timing Analysis with OpenSTA:
+
+  ```
+  openroad
+  read_lef /openLANE_flow/designs/picorv32a/runs/14-11_18-04/tmp/merged.lef
+  read_def /openLANE_flow/designs/picorv32a/runs/14-11_18-04/results/routing/picorv32a.def
+  write_db pico_route.db
+  read_db pico_route.db
+  read_verilog /openLANE_flow/designs/picorv32a/runs/14-11_18-04/results/synthesis/picorv32a.synthesis_preroute.v
+  read_liberty $::env(LIB_SYNTH_COMPLETE)
+  link_design picorv32a
+  read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+  set_propagated_clock [all_clocks]
+  read_spef /openLANE_flow/designs/picorv32a/runs/14-11_18-04/results/routing/picorv32a.spef
+  report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+  exit
+  ```
+
+  ![image](https://github.com/user-attachments/assets/36fe62ad-a985-4174-9f89-f60ed74de44d)
+
+  ![image](https://github.com/user-attachments/assets/eceda1b6-e090-4787-93dd-21585c1f4788)
+
+  ![image](https://github.com/user-attachments/assets/36209106-ff34-4ccb-8b46-3a4accbfa686)
+
+
+
+  
+
+
+
+
+  
   </details>
   
 </details>
