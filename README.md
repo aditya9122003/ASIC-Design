@@ -1773,6 +1773,11 @@ Worst Hold Slack:
 
   ![day4_14](https://github.com/user-attachments/assets/403aeffb-dba0-4c99-991d-67f8b564cda6)
 
+  Placement screenshot:
+
+  ![image](https://github.com/user-attachments/assets/42f3b783-2854-4310-9069-d25d71fcc280)
+
+
   Now, open a new terminal and run the below commands to load placement def in magic
 
   ```
