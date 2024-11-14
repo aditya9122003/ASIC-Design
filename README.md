@@ -1193,3 +1193,297 @@ Worst Hold Slack:
 
 
 </details>
+
+
+
+<details>
+  <summary>Lab 13:</summary>
+  <details>
+  <summary>Day 1:</summary>
+    
+  * Running Synthesis in OpenLane:
+    
+  ```
+
+  cd Desktop/work/tools/openlane_working_dir/openlane
+  docker
+  ./flow.tcl -interactive
+  package require openlane 0.9
+  prep -design picorv32a
+  run_synthesis
+
+  ```
+  
+  ![day1_openlane](https://github.com/user-attachments/assets/6c633a09-9ef3-4d52-9c10-82ed35f671f6)
+  
+  * View the Netlist:
+  
+  ```
+
+  cd designs/picorv32a/runs/13-11_13-50/results/synthesis/
+  gedit picorv32a.synthesis.v
+
+  ```
+  
+  ![day1_gedit_terminal](https://github.com/user-attachments/assets/1444186b-c0e1-4dc9-a897-8c79ff2c965a)
+  
+  ![day1_gedit_text](https://github.com/user-attachments/assets/2712fab2-3a3b-45d5-9f8c-6f31caa80352)
+  
+  * Yosys Report:
+  
+  ```
+
+  cd ../..
+  cd reports/synthesis
+  gedit 1-yosys_4.stat.rpt
+
+  ```
+  
+  ![day1_gedit_second_terminal](https://github.com/user-attachments/assets/6f68b9e6-069e-447e-8415-49d8e259678d)
+  
+  ![day1_gedit_second_text](https://github.com/user-attachments/assets/32db386a-3646-4221-9f38-3aa125d4138d)
+  
+  * Report:
+  
+  Printing Statistics:
+  
+  ```
+
+  28. Printing statistics.
+  
+  === picorv32a ===
+  
+     Number of wires:              14596
+     Number of wire bits:          14978
+     Number of public wires:        1565
+     Number of public wire bits:    1947
+     Number of memories:               0
+     Number of memory bits:            0
+     Number of processes:              0
+     Number of cells:              14876
+       sky130_fd_sc_hd__a2111o_2       1
+       sky130_fd_sc_hd__a211o_2       35
+       sky130_fd_sc_hd__a211oi_2      60
+       sky130_fd_sc_hd__a21bo_2      149
+       sky130_fd_sc_hd__a21boi_2       8
+       sky130_fd_sc_hd__a21o_2        57
+       sky130_fd_sc_hd__a21oi_2      244
+       sky130_fd_sc_hd__a221o_2       86
+       sky130_fd_sc_hd__a22o_2      1013
+       sky130_fd_sc_hd__a2bb2o_2    1748
+       sky130_fd_sc_hd__a2bb2oi_2     81
+       sky130_fd_sc_hd__a311o_2        2
+       sky130_fd_sc_hd__a31o_2        49
+       sky130_fd_sc_hd__a31oi_2        7
+       sky130_fd_sc_hd__a32o_2        46
+       sky130_fd_sc_hd__a41o_2         1
+       sky130_fd_sc_hd__and2_2       157
+       sky130_fd_sc_hd__and3_2        58
+       sky130_fd_sc_hd__and4_2       345
+       sky130_fd_sc_hd__and4b_2        1
+       sky130_fd_sc_hd__buf_1       1656
+       sky130_fd_sc_hd__buf_2          8
+       sky130_fd_sc_hd__conb_1        42
+       sky130_fd_sc_hd__dfxtp_2     1613
+       sky130_fd_sc_hd__inv_2       1615
+       sky130_fd_sc_hd__mux2_1      1224
+       sky130_fd_sc_hd__mux2_2         2
+       sky130_fd_sc_hd__mux4_1       221
+       sky130_fd_sc_hd__nand2_2       78
+       sky130_fd_sc_hd__nor2_2       524
+       sky130_fd_sc_hd__nor2b_2        1
+       sky130_fd_sc_hd__nor3_2        42
+       sky130_fd_sc_hd__nor4_2         1
+       sky130_fd_sc_hd__o2111a_2       2
+       sky130_fd_sc_hd__o211a_2       69
+       sky130_fd_sc_hd__o211ai_2       6
+       sky130_fd_sc_hd__o21a_2        54
+       sky130_fd_sc_hd__o21ai_2      141
+       sky130_fd_sc_hd__o21ba_2      209
+       sky130_fd_sc_hd__o21bai_2       1
+       sky130_fd_sc_hd__o221a_2      204
+       sky130_fd_sc_hd__o221ai_2       7
+       sky130_fd_sc_hd__o22a_2      1312
+       sky130_fd_sc_hd__o22ai_2       59
+       sky130_fd_sc_hd__o2bb2a_2     119
+       sky130_fd_sc_hd__o2bb2ai_2     92
+       sky130_fd_sc_hd__o311a_2        8
+       sky130_fd_sc_hd__o31a_2        19
+       sky130_fd_sc_hd__o31ai_2        1
+       sky130_fd_sc_hd__o32a_2       109
+       sky130_fd_sc_hd__o41a_2         2
+       sky130_fd_sc_hd__or2_2       1088
+       sky130_fd_sc_hd__or2b_2        25
+       sky130_fd_sc_hd__or3_2         68
+       sky130_fd_sc_hd__or3b_2         5
+       sky130_fd_sc_hd__or4_2         93
+       sky130_fd_sc_hd__or4b_2         6
+       sky130_fd_sc_hd__or4bb_2        2
+  
+     Chip area for module '\picorv32a': 147712.918400
+  
+  ```
+  
+  * Report Summary:
+  
+  ```
+
+  Flop ratio = Number of D Flip flops = 1613  = 0.1084
+               ______________________   _____
+               Total Number of cells    14876
+
+  ```
+  
+  Wire Count: 14,596
+  <br>
+  Cell Count: 14,876, including specific cells like sky130_fd_sc_hd__a2111o_2, sky130_fd_sc_hd__and2_2.
+  <br>
+  D Flip-flops: 1,613 with a flop ratio of 0.1084
+    
+  </details>
+
+  <details>
+
+  <summary>Day 2:</summary>
+
+  * Floorplanning in OpenLane:
+    
+
+    To start the Floorplanning in OpenLane, we can implement the following commands:
+  
+    ```
+  
+    cd Desktop/work/tools/openlane_working_dir/openlane
+    docker
+    ./flow.tcl -interactive
+    package require openlane 0.9
+    prep -design picorv32a
+    run_synthesis
+    run_floorplan
+    
+    ```
+  
+    ![day2_floorplan](https://github.com/user-attachments/assets/3877559a-095b-4bc9-9681-82daf5bcd753)
+  
+    Now, open a new terminal window, and access the floorplan file as follows:
+  
+    ```
+  
+    cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_16-53/results/floorplan
+    gedit picorv32a.floorplan.def
+  
+    ```
+  
+    ![day2_floorplan1](https://github.com/user-attachments/assets/3ac2aac4-22a3-4f9d-ae36-57ce07049b77)
+  
+    According to the floorplan definitions:
+  
+    *  1000 Unit Distance = 1 Micron
+    *  Die width in unit distance = 660685−0 = 660685
+    *  Die height in unit distance = 671405−0 = 671405
+    *  Width in microns = 660685 / 1000 = 660.685 Microns
+    *  Height in microns = 671405 / 1000 = 671.405 Microns
+    *  Die area in microns² = 660.685 × 671.405 = 443587.212425 Microns²
+
+    To view the Floorplan in Magic:
+
+    ```
+    
+    cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/11-11_16-28/results/floorplan/
+    magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+
+    ```
+
+    Floorplan Visualizations:
+
+    Once the command runs, we can see a graphical representation of the chip layout in Magic, which shows how cells and components are placed.
+
+    ![day2_zoomed_out](https://github.com/user-attachments/assets/484f197b-1170-44f6-8f3f-11e5253316b0)
+
+    Decap and Tap Cells:
+
+    * Decap Cells: These are placed near logic cells to manage transient power supply fluctuations and stabilize the power delivery network.
+    * Tap Cells: Used for connection to the power grid and to reduce substrate noise that could affect the chip's performance.
+   
+    ![day2_zoomed_in_1](https://github.com/user-attachments/assets/6afe79c4-addb-4ab3-a29a-d89f56e92c04)
+
+* Placement Process:
+  
+  * Unplaced Standard Cells
+
+    Initially, cells are unplaced, appearing at the origin. These will be moved into place during the placement phase.
+
+    ![day2_zoomed_in_2](https://github.com/user-attachments/assets/b1bb85da-1f02-40ef-ba8b-90937f796cc8)
+
+  * Run Placement
+
+    Follow the given commands:
+
+    ```
+    ./flow.tcl -interactive
+    package require openlane 0.9
+    prep -design picorv32a
+    run_synthesis
+    run_floorplan
+    run_placement
+      
+    ```
+  * View Placement in Magic
+
+    Once the placement is complete, we can view the result in Magic:
+
+    ```
+
+    cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_18-59/results/placement/
+    magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+    
+    ```
+
+    ![day2_postplacement](https://github.com/user-attachments/assets/2aaa6b4e-44a0-4dd9-98b0-2d7ceaa94fbe)
+
+    Placement Visualizations:
+
+    After running the command, we can see how the standard cells are placed on the chip layout.
+
+    ![day2_postplacement2](https://github.com/user-attachments/assets/b2799d49-1658-424c-9e80-d15a0a32295b)
+
+* Timing Parameters:
+
+  | Timing Parameter        | Value |
+  | ----------------------- | ----- |
+  | Slew Low Rise Threshold |20%    |
+  | Slew High Rise Threshold|80%    |
+  | Slew Low Fall Threshold |20%    |
+  | Slew High Fall Threshold|80%    |
+  | Input Rise Threshold 	  |50%    |
+  | Input Fall Threshold 	  |50%    |
+  | Output Rise Threshold 	|50%    |
+  | Output Fall Threshold 	|50%    |
+
+  * Propagation Delay:
+
+    Propagation delay is the time it takes for an input signal to propagate and affect the output signal.
+
+    ```
+    Rise Delay = time(out-fall-thr) - time(in-rise-thr)
+    ```
+
+    Transition Time:
+
+    Transition time is the time taken for a signal to change between logic levels. This is typically measured between 10% and 90% or 20% and 80% of the signal’s swing.
+
+    ```
+    
+    Fall Transition Time = time(slew-high-fall-thr) − time(slew-low-fall-thr)
+  
+    Rise Transition Time = time(slew-high-rise-thr) − time(slew-low-rise-thr) 
+
+    ```
+    
+
+
+
+
+  
+  </details>
+</details>
