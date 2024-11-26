@@ -2135,6 +2135,8 @@ Worst Hold Slack:
 
 <summary>Lab 14:</summary>
 
+Installation and setting up of OFRS:
+
 ```
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
 cd OpenROAD-flow-scripts
